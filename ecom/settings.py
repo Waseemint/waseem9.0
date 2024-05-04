@@ -1,10 +1,10 @@
 import os
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
-# SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = 'django-insecure-o8x581e+e#i@)w#i0tg(loir14s8(b7f936%)qcwt_4!p&r*&&'
-DEBUG = True
-# DEBUG = False
+SECRET_KEY = os.environ.get('SECRET_KEY')
+# SECRET_KEY = 'django-insecure-o8x581e+e#i@)w#i0tg(loir14s8(b7f936%)qcwt_4!p&r*&&'
+# DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['https://waseemint.com/','waseemint.com','waseem-int-d368a88e8f0a.herokuapp.com','www.waseemint.com','127.0.0.1']
 
 INSTALLED_APPS = [
@@ -70,16 +70,16 @@ AUTH_USER_MODEL = "accounts.Account"
 
 
 
-# DATABASES = { 
-#     'default': { 
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-#         'NAME': os.environ.get('NAME'), 
-#         'USER': os.environ.get('USER'), 
-#         'PASSWORD': os.environ.get('DB_PASSWORD'), 
-#         'HOST': os.environ.get('HOST'), 
-#         'PORT': '5432', 
-#     } 
-# }
+DATABASES = { 
+    'default': { 
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', 
+        'NAME': os.environ.get('NAME'), 
+        'USER': os.environ.get('USER'), 
+        'PASSWORD': os.environ.get('DB_PASSWORD'), 
+        'HOST': os.environ.get('HOST'), 
+        'PORT': '5432', 
+    } 
+}
 
 # DATABASES = { 
 #     'default': { 
@@ -92,12 +92,12 @@ AUTH_USER_MODEL = "accounts.Account"
 #     } 
 # } 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 
@@ -145,14 +145,14 @@ MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
 # DEFAULT_EMAIL
-DEFAULT_FROM_EMAIL = 'waseemint.pk@gmail.com'
-# DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_EMAIL')
+# DEFAULT_FROM_EMAIL = 'waseemint.pk@gmail.com'
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_EMAIL')
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-# EMAIL_HOST_USER = os.environ.get('DEFAULT_EMAIL')
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_USER = 'waseemint.pk@gmail.com'
-EMAIL_HOST_PASSWORD = 'pgkzlwobwbbfzhky'
+EMAIL_HOST_USER = os.environ.get('DEFAULT_EMAIL')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_USER = 'waseemint.pk@gmail.com'
+# EMAIL_HOST_PASSWORD = 'pgkzlwobwbbfzhky'
 
